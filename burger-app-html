@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet">
 
+
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90%;
+}
+</style>
+<body>
+
+<div class="top hide-small">
+  <div class="bar xlarge black opacity hover-opacity-off" id="myNavbar">
+    <a href="#home" class="bar-item button">HOME</a>
+    <a href="#menu" class="bar-item button">MENU</a>
+    <a href="#about" class="bar-item button">ABOUT</a>
+
+  </div>
+</div>
+  
+
+<header class="bgimg display-container grayscale-min" id="home">
+  <div class="display-middle center">
+      <span class="text-white hide-small" style="font-size:70px"><b>Delicious<br>Nicaraguan Food</b></span>
+    <p><a href="#menu" class="button black">Let me see the menu</a></p>
+    </div>
+</header>
+
+     
+     <div class="container padding-64 xxlarge" id="menu">
+     <div class="content black padding">
+  
+    <h1 class="center" style="margin-bottom:64px">THE MENU</h1>
+    <div class="row center border border-dark-grey">
+      <a href="javascript:void(0)" onclick="menu(event, 'Main');" id="myLink">
+        <div class="col s4 tablink padding-large hover-red">Main</div>
+      </a>
+      <a href="javascript:void(0)" onclick="menu(event, 'Sides');">
+        <div class="col s4 tablink padding-large hover-red">Sides</div>
+      </a>
+        <a href="javascript:void(0)" onclick="menu(event, 'Desserts');">
+        <div class="col s4 tablink padding-large hover-red">Desserts</div>
+      </a>
+    </div>
+
+      <div id="Main" class="container menu padding-32 white">
+      <h1><b>Carne Asada</b> 
+      <span class="right tag dark-grey round">$8.50<div class="product medium-4 columns" name="Carne Asada"> 
+      <input oninput="cartTotal()" id="8.50" value="0" size="2"/></div></span></h1>
+      <p class="text-grey">Grilled meat flavored with a variation of seasonings, served with gallopinto or white rice</p>
+      <hr>
+      
+      <h1><b>Nacatamal</b> <span class="right tag dark-grey round">$3.50
+        <div class="product medium-4 columns" name="Nacatamal">
+        <input oninput="cartTotal()" id="3.50" value="0" size="2"/></div></span></h1>
+      <p class="text-grey">Corn masa stuffed with meat</p>
+      <hr>
+      
+      <h1><b>Baho</b> <span class="right tag dark-grey round">$8.00
+      <div class="product medium-4 columns" name="Baho">
+     <input oninput="cartTotal()" id="8.00" value="0" size="2"/></div></span>
+     </h1>
+      <p class="text-grey">Marinated beef brisket with plantains and yuca, accompanied with curtido</p>
+      <hr>
+
+      <h1><b>Vigoron</b> <span class="right tag dark-grey round">$8.00
+      <div class="product medium-4 columns" name="Vigoron">
+      <input oninput="cartTotal()" id="8.00" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Boiled yuca served with fried pork rinds and curtido</p>
+      <hr>
+
+      <h1><b>Salpicon</b><span class="tag grey round">New</span><span class="right tag dark-grey round">$8.00<div class="product medium-4 columns" name="Salpicon">
+     <input oninput="cartTotal()" id="8.00" value="0" size="2"/></div></span>
+     </h1>
+      <p class="text-grey">Minced meat flavored with a variety of seasonings, served with rice and curtido</p>
+      <hr>
+
+      <h1><b>Indio Viejo</b> <span class="right tag dark-grey round">$7.00 <div class="product medium-4 columns" name=">Indio Viejo">
+     <input oninput="cartTotal()" id="7.00" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Stew-like dish composed of shredded meat, onions, tomatoes, and peppers fried with precooked cork meal. Served with corn tortilla or white rice</p>
+    </div>
+
+    <div id="Sides" class="container menu padding-32 white">
+      <h1><b>Gallo Pinto</b> <span class="tag grey round">Popular</span> <span class="right tag dark-grey round">$3.00 <div class="product medium-4 columns" name="Gallo Pinto">
+       <input oninput="cartTotal()" id="3.00" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-black">Rice and Beans</p>
+      <hr>
+   
+      <h1><b>Quesillo</b> <span class="right tag dark-grey round">$2.50 <div class="product medium-4 columns" name="Quesillo" data-id="0"> <input oninput="cartTotal()" id="2.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Tortilla stuffed with cheese and served with cream, onion, vinegar, and chile</p>
+      <hr>
+      
+      <h1><b>Tostones 4ct</b> <span class="right tag dark-grey round">$2.00 <div class="product medium-4 columns" name="Tostones">
+      <input oninput="cartTotal()" id="2.00" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Crunchy deep-fried plantains 4ct</p>
+      <hr>
+
+      <h1><b>Queso Frito</b> <span class="right tag dark-grey round">$1.50 
+      <div class="product medium-4 columns" name="Fried cheese">
+      <input oninput="cartTotal()" id="1.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Fried Cheese</p>
+    </div>
+
+
+     <div id="Desserts" class="container menu padding-32 white">
+      <h1><b>Semilla de Jicaro</b> 
+      <span class="right tag dark-grey round">$3.50<div class="product medium-4 columns" name="Semilla de Jicaro">
+       <input oninput="cartTotal()" id="3.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Horchata flavored drink</p>
+      <hr>
+   
+      <h1><b>Pinolillo</b> <span class="right tag dark-grey round">$2.50 <div class="product medium-4 columns" name="Pinolillo" data-id="0">
+      <input oninput="cartTotal()" id="2.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">A sweet cornmeal and cacao-based drink</p>
+      <hr>
+      
+      <h1><b>Pico</b> <span class="right tag dark-grey round">$2.50<div class="product medium-4 columns" name="Pico">
+      <input oninput="cartTotal()" id="2.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Triangle-shaped sweet bread stuffed with dried grated cheese and sugar</p>
+      <hr>
+      
+      <h1><b>Tres Leches</b><span class="tag grey round">Popular</span> <span class="right tag dark-grey round">$3.50 <div class="product medium-4 columns" name="Tres Leches">
+       <input oninput="cartTotal()" id="3.50" value="0" size="2"/></div></span>
+      </h1>
+      <p class="text-grey">Sponge cake soaked in evaporated milk,condensed milk, and table cream. Topped with whipped cream and cherries</p>
+    </div>
+    
+     </div>
+     </div>  
+      <!--==================Cart Class ===================-->
+       <div class="container center padding-64 black xxlarge col tablink hover ">
+       <div class="content light-green padding">
+       <h1 style="color:white">Your Order Here:</h1>
+       <h2 id="totalItems" style="color:white">Total Items: 0</h2>
+       <h2 id="totalDue" style="color:white">Amount Due: $0.00</h2>
+      <button href="javascript:void(0)" onclick="menu(event, 'Checkout');">Pay Now</button>
+      <button type="button" onclick="clearCart()">Clear Total</button>
+    
+    <div id="Checkout" class="container center menu padding-64 xlarge">
+     <div class="personalInfo">
+         <h4 style="color:red"><b>*All fields are required</b></h4>
+    <input onkeyup="validateFirstName(this.value, 'firstName')"
+           placeholder="First Name" id="fName" name="fName"/>
+    <span class="firstName" style="color:red"><b>*</b></span><br>
+         
+    <input onkeyup="validateLastName(this.value, 'lastName')"
+           placeholder= "Last Name" id="lName" name="lName"/>
+    <span class="lastName" style="color:red">*</span><br>
+         
+    <input onkeyup="validatePhoneNumber(this.value, 'phoneNumber')"
+           placeholder= "Phone Number" id="phoneNumber" name="phoneNumber"/>
+    <span class="phoneNumber" style="color:red"><b>*</b></span><br>
+         
+    <input type="email" onInput="validateEmail(this.value, 'email')" placeholder="Email" id="email" name="email"/>
+    <span class="email" style="color:red"><b>*</b></span><br>
+             
+    <input onInput="validateStreet(this.value, 'street')" 
+     placeholder= "Street Address" id="stAddress" name="stAddress"/>
+    <span class="street" style="color:red"><b>*</b></span><br>
+         
+    <input onInput="validateCity(this.value, 'city')" 
+     placeholder= "City" id="city" name="city"/>
+    <span class="city" style="color:red">*</span><br>
+    
+    </div>  
+      <div class="creditCard">
+        
+     <select name="cardtype" id="cardtype">
+        <option value="American">American</option>
+       <option value="Discover">Discover</option>
+       <option value="Master">Master</option>
+        <option value="Visa">Visa</option>
+
+    </select><br>
+        
+    <input onInput="validateCreditCard(this.value, 'num')" 
+     placeholder= "0000 0000 0000 0000" id="visaCard" name="visaCard"/>
+     <span class="num" style="color:red"><b>*</b></span><br>
+
+     
+      <span onInput="validateDate(this.value, 'exDate')">
+      <input placeholder= "MM"   id="month" name="month" size="3" class="exDate" />
+      <input placeholder= "YYYY" id="year" name="year" size="5" class="exDate" />
+     </span><br>
+
+    <input name="myBtn" type="submit" value="Submit Order" onclick="ajaxPost();">
+    <input type="reset"  value ="Cancel Order"/> <br><br><br>
+   
+     <div id="status" style="text-align: left; font-size: 16px"></div>
+    </div>
+    </div>
+    </div>
+        
+      
+           
+  
+     
+      </tr>
+      </table><br><br>
+    </div>
+    </div>
+    
+    <!--===============About Container =====================-->
+    <div class="container padding-64 xlarge black " id="about">
+    <div class="content light-blue  padding">
+    <h1 class="center" style="margin-bottom:64px">About</h1>
+    <p>The Nicaraguan Corner was founded in 1995 by Ms. Calderon in Miami, Florida. It all started when she wanted to help contribute in the bill expenses. She began selling her meals to her husband's coworkers, neighbors, family, and friends. </p>
+    <p><b>Our most popular meal sold?</b> Carne Asada with Gallopinto & Tostones
+     <img src="https://cdn.glitch.com/b5fd3829-0ddc-4175-8550-466483ca4575%2FCarne%20Asada.jpg?v=1564012356158" style="width:250px; margin-bottom:15px" class="square right" alt="Chef"></p>
+    
+    <h2>Opening Hours</h2>
+    <div class="row">
+      <div class="col s6">
+        <p>Sunday CLOSED</p>
+         <p>Monday 8 am - 7pm</p>
+        <p>Tuesday 8 am - 10 pm</p>
+        <p>Wednesday 8 am - 10 pm</p>
+        <p>Thursday 8 am - 10 pm</p>
+      </div>
+      <div class="col s6">
+        <p>Friday 8 am - 10 pm</p>
+        <p>Saturday 8 am - 7 pm</p>
+        
+        <h1>Nicaraguan Corner </h1>
+            <h3>7676 Campus Street</h3>
+      <h3> West Jordan, Utah 84047</h3>
+         </div> 
+      </div>
+    </div>
+  </div>
+</div>
+     <div class="flipme">
+            <div class="back">Carne Asada for $8.50</div>
+            <div class="front">Popular Main Dish </div>
+        </div>
+        <div class="flipme">
+          <div class="back">Gallopinto for $3.00 </div>
+            <div class="front"> Popular Side  </div>
+        </div>
+        <div class="flipme">
+            <div class="back">Tres Leches for $3.50</div>
+            <div class="front"> Popular Dessert </div>
+        </div> 
+         <br>
+ 
+</body>
+</html>
